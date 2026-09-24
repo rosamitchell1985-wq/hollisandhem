@@ -1,0 +1,66 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Announcement bar: the shipping and returns promise, shown on every page. -->
+<div class="announcement">
+  <p data-config="ANNOUNCEMENT">Free US shipping on orders over $75 · 30-day easy returns</p>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="{{BASE}}index.html">
+      Hollis &amp; Hem
+      <small data-config="TAGLINE">Everyday pieces, made to be lived in.</small>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="{{BASE}}shop.html"{{CUR:shop}}>Shop</a></li>
+        <li><a href="{{BASE}}shop.html?tag=new">New Arrivals</a></li>
+        <li><a href="{{BASE}}about.html"{{CUR:about}}>About</a></li>
+        <li><a href="{{BASE}}size-guide.html"{{CUR:size-guide}}>Size Guide</a></li>
+        <li><a href="{{BASE}}faq.html"{{CUR:faq}}>FAQ</a></li>
+        <li><a href="{{BASE}}contact.html"{{CUR:contact}}>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn search-toggle" type="button" aria-expanded="false" aria-controls="search-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <span class="visually-hidden">Search products</span>
+      </button>
+      <a class="icon-btn" href="{{BASE}}cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l-1 12H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+        <span class="visually-hidden" data-cart-label>Shopping cart, 0 items</span>
+      </a>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="search-panel" data-open="false">
+    <div class="container">
+      <form data-search-form role="search">
+        <label class="visually-hidden" for="header-search">Search products</label>
+        <input type="search" id="header-search" name="q" placeholder="Search dresses, knits, denim…" autocomplete="off">
+        <button class="btn btn--primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" data-open="false" aria-label="Mobile">
+    <div class="container">
+      <ul>
+        <li><a href="{{BASE}}shop.html"{{CUR:shop}}>Shop</a></li>
+        <li><a href="{{BASE}}shop.html?tag=new">New Arrivals</a></li>
+        <li><a href="{{BASE}}about.html"{{CUR:about}}>About</a></li>
+        <li><a href="{{BASE}}size-guide.html"{{CUR:size-guide}}>Size Guide</a></li>
+        <li><a href="{{BASE}}faq.html"{{CUR:faq}}>FAQ</a></li>
+        <li><a href="{{BASE}}contact.html"{{CUR:contact}}>Contact</a></li>
+        <li><a href="{{BASE}}cart.html"{{CUR:cart}}>Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

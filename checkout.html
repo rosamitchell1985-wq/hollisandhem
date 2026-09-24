@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Hollis &amp; Hem</title>
+<meta name="description" content="Three-step checkout: contact and shipping address, shipping method, then payment method. Shipping and estimated tax are shown before you pay.">
+<link rel="canonical" href="https://hollisandhem.com/checkout.html">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hollis &amp; Hem">
+<meta property="og:title" content="Checkout | Hollis &amp; Hem">
+<meta property="og:description" content="Shipping and estimated tax are shown before you pay.">
+<meta property="og:url" content="https://hollisandhem.com/checkout.html">
+<meta property="og:image" content="https://hollisandhem.com/assets/images/hero/hero-newsletter-boutique.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#7A2E4A">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/images/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="checkout" data-base="">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Announcement bar: the shipping and returns promise, shown on every page. -->
+<div class="announcement">
+  <p data-config="ANNOUNCEMENT">Free US shipping on orders over $75 · 30-day easy returns</p>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      Hollis &amp; Hem
+      <small data-config="TAGLINE">Everyday pieces, made to be lived in.</small>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html?tag=new">New Arrivals</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="size-guide.html">Size Guide</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn search-toggle" type="button" aria-expanded="false" aria-controls="search-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <span class="visually-hidden">Search products</span>
+      </button>
+      <a class="icon-btn" href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l-1 12H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+        <span class="visually-hidden" data-cart-label>Shopping cart, 0 items</span>
+      </a>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="search-panel" data-open="false">
+    <div class="container">
+      <form data-search-form role="search">
+        <label class="visually-hidden" for="header-search">Search products</label>
+        <input type="search" id="header-search" name="q" placeholder="Search dresses, knits, denim…" autocomplete="off">
+        <button class="btn btn--primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" data-open="false" aria-label="Mobile">
+    <div class="container">
+      <ul>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html?tag=new">New Arrivals</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="size-guide.html">Size Guide</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li aria-current="page">Checkout</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section" id="checkout">
+    <div class="container">
+
+      <h1>Checkout</h1>
+
+      <p class="visually-hidden" id="checkout-announcer" role="status" aria-live="polite"></p>
+
+      <!-- Shown when the cart is empty. -->
+      <div class="empty-state" id="checkout-empty" hidden>
+        <h2>There is nothing to check out</h2>
+        <p>Your cart is empty, so there is no order to place.</p>
+        <p><a class="btn btn--primary" href="shop.html">Browse the collection</a></p>
+      </div>
+
+      <div id="checkout-flow" hidden>
+        <ol class="checkout-steps">
+          <li data-step="1" aria-current="step">Contact &amp; shipping</li>
+          <li data-step="2">Shipping method</li>
+          <li data-step="3">Payment</li>
+        </ol>
+
+        <div class="checkout-layout">
+          <div>
+
+            <!-- ================================ Step 1: address ====== -->
+            <section class="checkout-step" data-step="1" data-active="true" aria-labelledby="checkout-step-heading-1">
+              <h2 id="checkout-step-heading-1" tabindex="-1">Contact and shipping address</h2>
+              <p class="muted">We ship within the <span data-config="COUNTRY">United States</span> only. We ask for the minimum needed to deliver your order and email you about it.</p>
+
+              <form novalidate>
+                <fieldset>
+                  <legend class="fieldset-legend">Contact</legend>
+
+                  <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" data-label="email address" autocomplete="email" required>
+                    <span class="hint">Used for your order confirmation and shipping updates.</span>
+                    <span class="field-error" id="email-error" role="alert"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Phone number (optional)</label>
+                    <input type="tel" id="phone" name="phone" data-label="phone number" autocomplete="tel" placeholder="(555) 010-4827">
+                    <span class="hint">Only used if the carrier needs to reach you about a delivery.</span>
+                    <span class="field-error" id="phone-error" role="alert"></span>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <legend class="fieldset-legend">Shipping address</legend>
+
+                  <div class="field-row field-row--2">
+                    <div class="field">
+                      <label for="first-name">First name</label>
+                      <input type="text" id="first-name" name="first-name" data-label="first name" autocomplete="given-name" required>
+                      <span class="field-error" id="first-name-error" role="alert"></span>
+                    </div>
+                    <div class="field">
+                      <label for="last-name">Last name</label>
+                      <input type="text" id="last-name" name="last-name" data-label="last name" autocomplete="family-name" required>
+                      <span class="field-error" id="last-name-error" role="alert"></span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="company">Company (optional)</label>
+                    <input type="text" id="company" name="company" data-label="company" autocomplete="organization">
+                    <span class="hint">Never required — leave it blank for a personal order.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="address1">Street address</label>
+                    <input type="text" id="address1" name="address1" data-label="street address" autocomplete="address-line1" required>
+                    <span class="field-error" id="address1-error" role="alert"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="address2">Apartment, suite, unit (optional)</label>
+                    <input type="text" id="address2" name="address2" data-label="apartment or suite" autocomplete="address-line2">
+                  </div>
+
+                  <div class="field-row field-row--3">
+                    <div class="field">
+                      <label for="city">City</label>
+                      <input type="text" id="city" name="city" data-label="city" autocomplete="address-level2" required>
+                      <span class="field-error" id="city-error" role="alert"></span>
+                    </div>
+                    <div class="field">
+                      <label for="state">State</label>
+                      <select id="state" name="state" data-label="state" autocomplete="address-level1" required>
+                        <option value="">Choose…</option>
+                      </select>
+                      <span class="field-error" id="state-error" role="alert"></span>
+                    </div>
+                    <div class="field">
+                      <label for="zip">ZIP code</label>
+                      <input type="text" id="zip" name="zip" data-label="ZIP code" data-validate="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" required>
+                      <span class="field-error" id="zip-error" role="alert"></span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" value="United States" readonly>
+                    <span class="hint">We do not ship outside the United States at this time.</span>
+                  </div>
+                </fieldset>
+
+                <div class="checkout-nav">
+                  <a class="btn btn--quiet" href="cart.html">Back to cart</a>
+                  <button class="btn btn--primary" type="button" data-next-step="2">Continue to shipping method</button>
+                </div>
+              </form>
+            </section>
+
+            <!-- =============================== Step 2: shipping ====== -->
+            <section class="checkout-step" data-step="2" data-active="false" aria-labelledby="checkout-step-heading-2">
+              <h2 id="checkout-step-heading-2" tabindex="-1">Shipping method</h2>
+              <p class="muted">Delivery estimates begin after processing, which takes <span data-config="ORDER_PROCESSING_TIME">1–2 business days</span>. Standard shipping is free on orders of <span data-config-money="FREE_SHIPPING_THRESHOLD">$75.00</span> or more.</p>
+
+              <div class="shipping-methods" id="shipping-methods" role="radiogroup" aria-label="Shipping method"></div>
+
+              <p class="summary-note" style="margin-top:1rem">
+                We ship to street addresses and PO boxes within the United States. Tracking is emailed when your
+                parcel leaves the warehouse. Full details in the <a href="policies/shipping-policy.html">shipping policy</a>.
+              </p>
+
+              <div class="checkout-nav">
+                <button class="btn btn--quiet" type="button" data-next-step="1">Back</button>
+                <button class="btn btn--primary" type="button" data-next-step="3">Continue to payment</button>
+              </div>
+            </section>
+
+            <!-- ================================ Step 3: payment ====== -->
+            <section class="checkout-step" data-step="3" data-active="false" aria-labelledby="checkout-step-heading-3">
+              <h2 id="checkout-step-heading-3" tabindex="-1">Payment</h2>
+              <p class="muted">Choose how you would like to pay. This step collects the payment <em>method</em> only.</p>
+
+              <div class="shipping-methods" role="radiogroup" aria-label="Payment method">
+                <div class="method-card">
+                  <input type="radio" name="payment-method" id="pay-card" value="card" checked>
+                  <label for="pay-card">
+                    <span class="method-card__icon">
+                      <svg viewBox="0 0 32 20" aria-hidden="true"><rect x="1" y="1" width="30" height="18" rx="3" fill="none" stroke="#2B2B2B" stroke-width="1.5"></rect><rect x="1" y="5.5" width="30" height="3.5" fill="#2B2B2B"></rect><rect x="4.5" y="13" width="9" height="2.5" rx="1" fill="#7A2E4A"></rect></svg>
+                    </span>
+                    <span class="method-card__text">
+                      <strong>Credit or debit card</strong>
+                      <span>Visa, Mastercard, American Express, Discover</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="method-card">
+                  <input type="radio" name="payment-method" id="pay-paypal" value="paypal">
+                  <label for="pay-paypal">
+                    <span class="method-card__icon">
+                      <svg viewBox="0 0 32 20" aria-hidden="true"><path d="M9 16 11 4h7a4 4 0 0 1 0 8h-4l-.7 4z" fill="none" stroke="#2B2B2B" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+                    </span>
+                    <span class="method-card__text">
+                      <strong>PayPal</strong>
+                      <span>You would be redirected to PayPal to approve the payment</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="method-card">
+                  <input type="radio" name="payment-method" id="pay-apple" value="apple-pay">
+                  <label for="pay-apple">
+                    <span class="method-card__icon">
+                      <svg viewBox="0 0 32 20" aria-hidden="true"><path d="M17.5 6.4c.7-.9.6-2.1.5-2.4-.5 0-1.2.4-1.7.9-.5.6-.7 1.4-.6 2.2.7.1 1.4-.3 1.8-.7zM19.6 13.4c-.4.9-.6 1.3-1.1 2.1-.7 1.1-1.7 2.4-2.9 2.4-1.1 0-1.4-.7-2.9-.7s-1.8.7-2.9.7c-1.2 0-2.1-1.2-2.8-2.2-2-2.9-2.2-6.4-1-8.2.9-1.3 2.2-2.1 3.5-2.1 1.3 0 2.1.7 3.2.7s1.7-.7 3.2-.7c1.1 0 2.4.6 3.2 1.7-2.8 1.5-2.4 5.5.5 6.3z" fill="#2B2B2B"></path></svg>
+                    </span>
+                    <span class="method-card__text">
+                      <strong>Apple Pay</strong>
+                      <span>Available in Safari on a supported Apple device</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="method-card">
+                  <input type="radio" name="payment-method" id="pay-google" value="google-pay">
+                  <label for="pay-google">
+                    <span class="method-card__icon">
+                      <svg viewBox="0 0 32 20" aria-hidden="true"><circle cx="16" cy="10" r="6.5" fill="none" stroke="#2B2B2B" stroke-width="1.5"></circle><path d="M16 6.5v7M12.5 10h7" stroke="#7A2E4A" stroke-width="1.5"></path></svg>
+                    </span>
+                    <span class="method-card__text">
+                      <strong>Google Pay</strong>
+                      <span>Available in Chrome with a saved payment method</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="secure-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+                <span>
+                  <strong>No card details are requested on this page.</strong> There is no card number, expiry or
+                  security code field anywhere in this checkout, and nothing you enter is stored or sent to a server.
+                  On a live store, card data would be collected by a PCI-compliant payment provider over an encrypted
+                  connection and never touch this site.
+                </span>
+              </div>
+
+              <p class="summary-note" style="margin-top:1rem">
+                By placing an order you agree to our <a href="policies/terms-of-service.html">Terms of Service</a>.
+                See also the <a href="policies/refund-policy.html">Refund &amp; Returns Policy</a>,
+                <a href="policies/shipping-policy.html">Shipping Policy</a> and
+                <a href="policies/privacy-policy.html">Privacy Policy</a>.
+              </p>
+
+              <div class="checkout-nav">
+                <button class="btn btn--quiet" type="button" data-next-step="2">Back</button>
+                <button class="btn btn--primary" type="button" id="place-order">Place order</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- =================================== Order summary ====== -->
+          <aside class="order-summary" aria-labelledby="checkout-summary-heading">
+            <h2 id="checkout-summary-heading">Order summary</h2>
+            <p class="summary-note"><span id="summary-count">0</span> item(s)</p>
+
+            <ul style="list-style:none;margin:0 0 1rem;padding:0" id="checkout-items"></ul>
+
+            <dl class="summary-rows">
+              <div class="summary-row">
+                <dt>Subtotal</dt>
+                <dd id="summary-subtotal">$0.00</dd>
+              </div>
+              <div class="summary-row">
+                <dt>Shipping</dt>
+                <dd id="summary-shipping">$6.95</dd>
+              </div>
+              <div class="summary-row">
+                <dt>Estimated sales tax</dt>
+                <dd id="summary-tax">$0.00</dd>
+              </div>
+              <div class="summary-row summary-row--total">
+                <dt>Total</dt>
+                <dd id="summary-total">$0.00</dd>
+              </div>
+            </dl>
+
+            <p class="summary-note">
+              Sales tax is estimated here at a sample rate. On a live store the exact, destination-based rate
+              is calculated before payment and is the amount shown as Total.
+            </p>
+
+            <ul class="policy-links">
+              <li><a href="policies/shipping-policy.html">Shipping policy</a></li>
+              <li><a href="policies/refund-policy.html">Refund &amp; returns policy</a></li>
+              <li><a href="policies/privacy-policy.html">Privacy policy</a></li>
+              <li><a href="contact.html">Contact support</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ============================== Processing (temporary) ====== -->
+      <div class="processing" id="processing" data-active="false">
+        <div class="spinner" aria-hidden="true"></div>
+        <h2>Processing your payment…</h2>
+        <p class="muted">Please do not close this window.</p>
+      </div>
+
+      <!-- ==================================== Failure screen ======= -->
+      <div class="payment-failed" id="payment-failed" data-active="false" role="alert">
+        <div class="payment-failed__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line><line x1="15.5" y1="8.5" x2="8.5" y2="15.5"></line></svg>
+        </div>
+        <h2 id="payment-failed-heading">Payment Failed</h2>
+        <p>We couldn't process your payment. No charge has been made. Please try again later or contact us at
+          <a href="mailto:support@hollisandhem.com" data-config="SUPPORT_EMAIL">support@hollisandhem.com</a>.</p>
+        <p class="summary-note">Your cart has been kept exactly as it was, so nothing is lost.</p>
+        <div class="cluster">
+          <button class="btn btn--primary" type="button" id="try-again">Try again</button>
+          <a class="btn btn--secondary" href="cart.html">Back to cart</a>
+          <a class="btn btn--quiet" href="contact.html">Contact support</a>
+        </div>
+      </div>
+
+      <noscript>
+        <p>Checkout needs JavaScript to total your order. You can still
+          <a href="contact.html">contact us</a> and we will help you place the order by email or phone.</p>
+      </noscript>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2 style="font-family:var(--font-display);font-size:1.375rem;text-transform:none;letter-spacing:normal">Hollis &amp; Hem</h2>
+        <p data-config="TAGLINE">Everyday pieces, made to be lived in.</p>
+
+        <dl class="footer-contact">
+          <dt>Registered business</dt>
+          <dd data-config="LEGAL_ENTITY_NAME">Hollis &amp; Hem LLC</dd>
+          <dt>Mailing address</dt>
+          <dd data-config="MAILING_ADDRESS">412 Foundry Lane, Suite 210, Portland, OR 97209</dd>
+          <dt>Customer support</dt>
+          <dd><a href="mailto:support@hollisandhem.com" data-config="SUPPORT_EMAIL">support@hollisandhem.com</a></dd>
+          <dt>Order questions</dt>
+          <dd><a href="mailto:orders@hollisandhem.com" data-config="ORDERS_EMAIL">orders@hollisandhem.com</a></dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15550104827" data-config="PHONE">(555) 010-4827</a></dd>
+          <dt>Hours</dt>
+          <dd data-config="BUSINESS_HOURS">Monday–Friday, 9:00 AM – 6:00 PM ET</dd>
+          <dt>Ships to</dt>
+          <dd data-config="COUNTRY">United States</dd>
+        </dl>
+
+        <!-- OWNER TO COMPLETE: the business name and address above are demo
+             values for a fictional company. Replace them in
+             assets/js/site-config.js and in scripts/shell/footer.html with your
+             own registered details before trading or advertising. -->
+
+        <ul class="social-links">
+          <li><a href="#" aria-label="Hollis &amp; Hem on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.8s0 3.5-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.5 2.2 15.1 2.2 12s0-3.5.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg></a></li>
+          <li><a href="#" aria-label="Hollis &amp; Hem on Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.7 19.3c-.1-.8-.2-2 0-2.9l1.2-5.1s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.5-.3 1 .5 1.9 1.6 1.9 1.9 0 3.2-2.4 3.2-5.3 0-2.2-1.5-3.8-4.1-3.8a4.7 4.7 0 0 0-4.9 4.7 2.9 2.9 0 0 0 .7 2c.1.2.1.3.1.4l-.2.8c0 .3-.2.3-.5.2-1.3-.6-2-2.4-2-3.9 0-3.2 2.3-6.1 6.7-6.1 3.5 0 6.2 2.5 6.2 5.8 0 3.5-2.2 6.3-5.2 6.3a2.7 2.7 0 0 1-2.3-1.2l-.6 2.4a11 11 0 0 1-1.3 2.7A10 10 0 1 0 12 2z"/></svg></a></li>
+          <li><a href="#" aria-label="Hollis &amp; Hem on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.2-1.5 1.5-1.5h1.7V4.6a21 21 0 0 0-2.4-.1c-2.4 0-4.1 1.5-4.1 4.2v2.2H7.4V14h2.8v8z"/></svg></a></li>
+          <li><a href="#" aria-label="Hollis &amp; Hem on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 2h-3v13.4a2.6 2.6 0 1 1-2-2.5V9.8a5.9 5.9 0 1 0 5 5.8V9.2a6.8 6.8 0 0 0 3.8 1.2V7.3a3.9 3.9 0 0 1-3.8-4z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="footer-shop">
+        <h3 id="footer-shop">Shop</h3>
+        <ul>
+          <li><a href="shop.html">All products</a></li>
+          <li><a href="shop.html?category=Dresses">Dresses</a></li>
+          <li><a href="shop.html?category=Tops">Tops</a></li>
+          <li><a href="shop.html?category=Bottoms">Bottoms</a></li>
+          <li><a href="shop.html?category=Outerwear">Outerwear</a></li>
+          <li><a href="shop.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-help">
+        <h3 id="footer-help">Help</h3>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="size-guide.html">Size guide</a></li>
+          <li><a href="policies/shipping-policy.html">Shipping</a></li>
+          <li><a href="policies/refund-policy.html">Returns &amp; refunds</a></li>
+          <li><a href="cart.html">Your cart</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-company">
+        <h3 id="footer-company">Company</h3>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#how-we-make">How we make it</a></li>
+          <li><a href="about.html#responsibility">Responsibility</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-policies">
+        <h3 id="footer-policies">Policies</h3>
+        <ul>
+          <li><a href="policies/refund-policy.html">Refund &amp; returns</a></li>
+          <li><a href="policies/shipping-policy.html">Shipping policy</a></li>
+          <li><a href="policies/privacy-policy.html">Privacy policy</a></li>
+          <li><a href="policies/terms-of-service.html">Terms of service</a></li>
+          <li><a href="policies/cookie-policy.html">Cookie policy</a></li>
+          <li><a href="policies/privacy-policy.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span data-copyright-year>2026</span> Hollis &amp; Hem. All rights reserved.</p>
+      <ul>
+        <li><a href="policies/privacy-policy.html">Privacy</a></li>
+        <li><a href="policies/terms-of-service.html">Terms</a></li>
+        <li><a href="policies/cookie-policy.html">Cookies</a></li>
+        <li><a href="policies/privacy-policy.html#do-not-sell">Do Not Sell or Share</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie notice: a dismissible bar, never a blocking overlay. -->
+<div class="cookie-notice" id="cookie-notice" role="region" aria-label="Cookie notice" data-open="false">
+  <p>We use a small number of cookies to keep your cart and remember this choice. We do not use advertising cookies. Read the <a href="policies/cookie-policy.html">Cookie Policy</a>.</p>
+  <div class="cluster">
+    <button class="btn btn--small btn--quiet" type="button" id="cookie-essential">Essential only</button>
+    <button class="btn btn--small btn--primary" type="button" id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" data-open="false"></div>
+
+<script src="assets/js/site-config.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>
